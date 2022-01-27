@@ -6,6 +6,10 @@
 
 - Compare your answers to the practice exercise about paths with someone next to you. If your answers were different, discuss why.
 
+ ```
+ Absolute has the / at the beginning. 
+ ```
+ 
 ## Practical Computing tips
 
 - [Practical Computing Tips](https://github.com/FoundCompBio-Spr22/Intro_Week1/blob/main/ComputingTips.md)
@@ -33,6 +37,18 @@ Practice Exercise
   - /home/<yourUserName>/myBiologyClasses/Evolution/EvolutionImportantNotes.txt - file
 (5) For each of your `.txt` files, click the "Edit" button, add some relevant text,
     and save your changes.
+```
+
+```
+# Notes 1/27/22
+- Current working directory for HPC: Home. Always start with home directory (~ -> indicates home directory)
+- PWD "print working directory" shows absolute path to help with navigating where you are. 
+- cd -> "change directory", move to a new working directory in homw folder 
+- cd -> start typing folder name, "tab" twice shows the folders that match it and will fill in the rest of the name. 
+- press up and down arrow on command allows you to scroll through command history. 
+- bash -> name of shell we are using when logged into smic shell, we are using this today. 
+- zsh is another kind of shell and may need different commands. 
+- shell is the environment of commands we can work with on the command line. 
 ```
 
 ## Introduction to the Command Line
@@ -69,6 +85,40 @@ Practice Exercise
 - [Notes about command-line navigation](https://github.com/FoundCompBio-Spr22/Shell_Week2/blob/main/CommandLine_Navigating.md)
 
 ```
+# Notes 1/27/22
+- view contents of folder "ls" -> list
+- touch nameoffile.txt -> creates a new folder quickly
+- nano can also make a folder, opens up nano environment and shows us the contents of the file. control x to save it. 
+- cat foldername.tst -> displays text stored in the file. cat = concatenate as well. 
+- cat is the command and anything we type after is the argument, cat is capable of many command line arguments. 
+- wildcards -> * represents any text that can go in a particular pattern. 
+    - Ex: cat *.txt -> will find any file with .txt at the end. 
+- some commands can take flags, which are options that change the behavior of the command in some way. every command
+has it own manual page, which is a description of what the command does. 
+    - Ex: man.ls -> shows the manual page for ls, scroll up and down with arrow key. 
+    - flags start with a - always. they are case sensitive as well. single letter flags always have a single dash. 
+    - there are synonyms for the flags as well, they are listed next to the first one. 
+    - exit with "q" -> means quit. 
+    - one useful flag is: ls -d which gives us a single dot (.) - always a shortcut for the folder we are currently         in. 
+    - .. is a shortcut for the parent of our working directory. 
+    - ls -l -> shows us a long list, displaying more info than names of files. directory and file names are color           coded. shows time and date was last edited, file size. 
+    - ls -lh -> the h is human-readable sizes, shows sizes we understand. this shows who owns the files and folders,         the root, 9 characters in 3 sets of 3, there are always 3 different kinds of permissions related to a folder: 
+            - r -> reading (allow people to read file)
+            - w -> writing 
+            - x -> executing (when a file is a porgram this is used)
+    - the first set of 3 -> permissions to who owns the file directory (user) 
+    - the second set -> permissions everyone else in group has (anyone else in users)
+    - the third set -> anyone else in users. 
+    - we can change permissions -> "chmod ugo (user, group, others) only vhange user, u, u-w indicates losing write permissions then add the file 
+        - chmod u-w file.txt -> does not display anything immeduately, but when you type ls -l it will show a difference in the permissions. change to + to add back permissions. 
+        - chmod ugo+w file.txt  changes it for everyone. 
+        - if you don't own a file, you may not be able to change permissions for it. you must own it. 
+- mv (move file using relative or absolute paths) from (file name) to (filename)/
+    - file mv file 
+- change file name -> mv currentplace.txt newname.txt -this will preserve context of file. 
+```
+
+```
 Practice Exercise
 
 (1) Use the cd command to navigate up and down through the folders you created in the previous exercise.
@@ -95,6 +145,21 @@ Practice Exercise
 - `nano filename.txt` - this is actually an entire text editing program (type text like normal)
     - write out is save and ^=control (^O) exit (^X)
 - `wc` - print out the length of a file in lines, words, and characters
+
+```
+**# Notes 1/27/22**
+- if file is super long, you may not want to use cat. use head file.txt to show first 10 lines of the file. 
+- head -n# changes the number of lines on display
+- tail shows the last 10 lines of a file, sometimes the lines can be empty. 
+- less -> takes into a new window to scroll up and down file to find what you need. q to exit. 
+- wc file.txt - word count that shows the #lines, #words, #characters. 
+- mkdir makes a new directory. 
+- rmdir deletes directory only if its **empty**. it permnately deletes it. 
+- rm* deletes every file in a directory. dont actually use this. 
+- echo "text" will write it back to you. 
+- echo "text" >> file.txt (>> apends text to the file, redirects output to file instead of displaying back to the screen), see with "cat". 
+- echo "text" > file.txt to replace contents of the file. 
+```
 
 ```
 Practice Exercise
