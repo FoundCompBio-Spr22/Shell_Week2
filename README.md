@@ -61,7 +61,7 @@ Practice Exercise
         - Group
         - Others
 - [Wikipedia on Unix Permissions](https://en.wikipedia.org/wiki/File_system_permissions#Notation_of_traditional_Unix_permissions)
-- la - list with hidden files
+- `la` - list with hidden files
 - `cd` - change directory
     - will accept absolute or relative paths
 - `chmod` - change permissions - specify who (ugo), how (+ or -), and what (rwx)
